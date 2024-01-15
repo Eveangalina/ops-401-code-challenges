@@ -19,6 +19,8 @@ Set-ItemProperty -Path $autoUpdateKey -Name "ScheduledInstallTime" -Value 10
 Restart-Service wuauserv
 
 Write-Host "Automatic Windows Updates have been enabled for Windows 10 Pro."
-# This PowerShell script is designed to automate the configuration of automatic Windows updates for Windows 10 Pro machines within the Initrobe organization. By modifying specific registry settings related to Windows Update, the script ensures that updates are scheduled to install every day at 10 AM. This approach helps maintain the security and performance of our Windows 10 Pro systems by promptly applying the latest updates provided by Microsoft. Additionally, the script restarts the Windows Update service to immediately implement the changes. This streamlined process aims to enhance the efficiency of our update management strategy, contributing to a more secure and up-to-date computing environment for Initrobe's operations.
 
 # End of Script
+
+# Resources 
+[ChatGPT](https://chat.openai.com/share/691fa0b7-2270-4f15-9105-9c468ebc2d1b)
