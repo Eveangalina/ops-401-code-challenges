@@ -10,7 +10,7 @@ ip_address = input(f"Enter the target IP address (default {default_ip}): ") or d
 def ping_ip(ip):
     try:
         # On Windows, use '-n' instead of '-c'
-        output = subprocess.check_output(['ping', '-c', '1', ip], stderr=subprocess.STDOUT, universal_newlines=True)
+        output = subprocess.check_output(['ping', '-n', '1', ip], stderr=subprocess.STDOUT, universal_newlines=True)
         return True
     except subprocess.CalledProcessError:
         return False
