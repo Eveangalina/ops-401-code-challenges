@@ -1,35 +1,26 @@
-# Script Name: Ops Lab 04: Systems Hardening with CIS Standards
-# Author: Eve Campos
-# Date of latest revision: 01/12/2024      
-# Purpose: This PowerShell script automates the configuration of the required settings in Windows Server 2019.
-# Configure: Automates CIS Benchmarks 1.1.5(L1) and 18.4.3(L1)
+# Script Name:                  Ops Lab 04: Systems Hardening with CIS Standards
+# Author:                       Eve Campos
+# Date of latest revision:      16/01/2024      
+# Purpose:                      Automate the configuration of Windows Server 2019 on AWS EC2 to meet CIS Benchmarks 1.1.5(L1) and 18.4.3(L1)
 
-# Define the path for the security configuration file
+# Configure 'Password must meet complexity requirements' (Benchmark 1.1.5 L1)
+# Enabling this setting requires passwords to contain characters from three of five categories: 
+# Uppercase characters, Lowercase characters, Base 10 digits, Non-alphabetic characters, Unicode characters.
 $secConfigPath = "C:\SecConfig.cfg"
-
-# Export the current security configuration
 secedit /export /cfg $secConfigPath
-
-# Read the content of the security configuration file
-$secConfigContent = Get-Content -Path $secConfigPath
-
-# Update 'Password must meet complexity requirements' (Benchmark 1.1.5 L1)
-$secConfigContent = $secConfigContent -Replace "PasswordComplexity\s*=\s*0", "PasswordComplexity=1"
-
-# Write the updated configuration back to the file
-$secConfigContent | Set-Content -Path $secConfigPath
-
-# Apply the updated security configuration
+(Get-Content -path $secConfigPath).Replace("PasswordComplexity=0", "PasswordComplexity=1") | Set-Content -Path $secConfigPath
 secedit /configure /db "C:\Windows\security\local.sdb" /cfg $secConfigPath /areas SECURITYPOLICY
 
-# Configure 'Disable SMB v1 server' (Benchmark 18.4.3 L1)
+# Disable SMB v1 server to comply with CIS Benchmark 18.4.3 (L1)
+# This setting disables the older SMBv1 protocol which is less secure.
 Set-SmbServerConfiguration -EnableSMB1Protocol $false -Force
 
-# Cleanup: Remove the temporary security configuration file
-Remove-Item -Path $secConfigPath -Force
+# Cleanup
+Remove-Item -Path $secConfigPath
 
-# Output result to the console
-Write-Host "CIS Benchmark configurations for 1.1.5(L1) and 18.4.3(L1) have been applied."
+# Output result
+Write-Host "CIS Benchmark configurations for 1.1.5(L1) and 18.4.3(L1) applied."
+
 
 # Resources
 # This script was improved with assistance from ChatGPT, OpenAI's language model and a fellow classmate; Juan Cano's help
