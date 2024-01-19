@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 # Script Name: File Encryption 1
 # Author: Eveangalina Campos
 # Date of latest revision: 01/10/2024
