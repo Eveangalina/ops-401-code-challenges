@@ -3,7 +3,7 @@
 # Script Name: File Encryption 2
 # Author: Eveangalina Campos
 # Date of latest revision: 01/19/2024
-# Purpose: This Python script Encrypts and Decrypts files or messages
+# Purpose: This Python script Encrypts and Decrypts files or messages WITH the ability to recursively encrypt and decrypt all files within a specified folder.
 # Resources:
 # - Python: List Of Files In Directory And Subdirectories
 # - Recursive File and Directory Manipulation in Python
