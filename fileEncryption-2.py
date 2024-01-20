@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# Script Name: File Encryption 1
+# Script Name: File Encryption 2
 # Author: Eveangalina Campos
 # Date of latest revision: 01/19/2024
 # Purpose: This Python script Encrypts and Decrypts files or messages
