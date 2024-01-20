@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 
-# Script Name: File Encryption 1
+# Script Name: File Encryption 2
 # Author: Eveangalina Campos
-# Date of latest revision: 01/18/2024
+# Date of latest revision: 01/20/2024
 # Purpose: This Python script Encrypts and Decrypts files or messages
 # Resources: I worked with Rodolpho Gonzalez Juan Cano and ChatGPT
 
