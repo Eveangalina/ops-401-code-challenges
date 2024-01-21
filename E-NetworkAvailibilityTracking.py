@@ -41,7 +41,7 @@ if __name__ == "__main__":
             while True:
                 exit_code = ping_host(target_ip)
                 current_status = "Active" if exit_code == 0 else "Inactive"
-                timestamp = time.strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]
+                timestamp = time.strftime("%Y-%m-%d %H:%M:%S")
 
                 if current_status != previous_status and previous_status is not None:
                     subject = f"Status Change Detected for {target_ip}"
