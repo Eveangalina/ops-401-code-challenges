@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 # Script Name:                  Network Security Tool with Scapy
-# Author:                       Evengalina Campos
+# Author:                       Eveangalina Campos
 # Date of latest revision:      22/01/2024      
 # Purpose:                      Assess the status of TCP ports on a specified host (IP address)
 
