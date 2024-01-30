@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 # Script Name:                  Network Security Tool with Scapy
-# Author:                       Eveangalina Campos
+# Author:                       Evangelina Campos
 # Date of latest revision:      22/01/2024      
 # Purpose:                      Assess the status of TCP ports on a specified host (IP address)
 
@@ -21,7 +21,7 @@ def tcp_port_scan(target_ip, port_range):
                 # Send a RST packet to close the connection
                 rst_packet = IP(dst=target_ip) / TCP(dport=port, flags="R")
                 send(rst_packet, verbose=0)
-                print(f"Port {port} is open.")
+                print(f"Port {port} is open and a RST packet has been sent to close the connection.")
 
             # Check if the port is closed (RST received)
             elif response.haslayer(TCP) and response.getlayer(TCP).flags == 0x14:
