@@ -4,7 +4,7 @@
 # Author:                       E Campos
 # Date of latest revision:      22/01/2024
 # Purpose:                      Ping a specified IP address to check for host availability and then perform a TCP port scan to identify open ports if the host is responsive.
-
+# Resources:                    ChatGPT
 from scapy.all import sr1, ICMP, IP, TCP, conf, L3RawSocket
 
 # Suppress Scapy IPv6 warning and use IPv4 only
