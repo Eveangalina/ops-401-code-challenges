@@ -1,0 +1,93 @@
+[
+    {
+      "AccountId": "940626410323",
+      "Arn": "arn:aws:guardduty:us-west-2:940626410323:detector/94c6b6acd964615a00d64519ec2cc86f/finding/0641916f4487414dafcf5823cf33438e",
+      "CreatedAt": "2024-02-03T05:04:25.269Z",
+      "Description": "A Kubernetes API commonly used in DefenseEvasion tactics was invoked on cluster GeneratedFindingEKSClusterName by the anonymous user system:anonymous.",
+      "Id": "0641916f4487414dafcf5823cf33438e",
+      "Partition": "aws",
+      "Region": "us-west-2",
+      "Resource": {
+        "EksClusterDetails": {
+          "Name": "GeneratedFindingEKSClusterName",
+          "Arn": "GeneratedFindingEKSClusterArn",
+          "VpcId": "GeneratedFindingEKSClusterVpcId",
+          "Status": "ACTIVE",
+          "Tags": [
+            {
+              "Key": "GeneratedFindingEKSClusterTag1",
+              "Value": "GeneratedFindingEKSClusterTagValue1"
+            },
+            {
+              "Key": "GeneratedFindingEKSClusterTag2",
+              "Value": "GeneratedFindingEKSClusterTagValue2"
+            },
+            {
+              "Key": "GeneratedFindingEKSClusterTag3",
+              "Value": "GeneratedFindingEKSClusterTagValue3"
+            }
+          ],
+          "CreatedAt": "2021-11-11T10:15:55.218Z"
+        },
+        "KubernetesDetails": {
+          "KubernetesUserDetails": {
+            "Username": "system:anonymous",
+            "Uid": "GeneratedFindingUID",
+            "Groups": [
+              "system:unauthenticated"
+            ],
+            "SessionName": [
+              "GeneratedFindingSessionName"
+            ]
+          }
+        },
+        "ResourceType": "EKSCluster"
+      },
+      "SchemaVersion": "2.0",
+      "Service": {
+        "Action": {
+          "ActionType": "KUBERNETES_API_CALL",
+          "KubernetesApiCallAction": {
+            "RequestUri": "GeneratedFindingRequestURI",
+            "Verb": "get",
+            "UserAgent": "",
+            "RemoteIpDetails": {
+              "City": {
+                "CityName": "GeneratedFindingCityName"
+              },
+              "Country": {
+                "CountryName": "GeneratedFindingCountryName"
+              },
+              "GeoLocation": {
+                "Lat": 0,
+                "Lon": 0
+              },
+              "IpAddressV4": "198.51.100.0",
+              "Organization": {
+                "Asn": "0",
+                "AsnOrg": "GeneratedFindingASNOrg",
+                "Isp": "GeneratedFindingISP",
+                "Org": "GeneratedFindingORG"
+              }
+            },
+            "StatusCode": 200
+          }
+        },
+        "Archived": false,
+        "Count": 1,
+        "DetectorId": "94c6b6acd964615a00d64519ec2cc86f",
+        "EventFirstSeen": "2024-02-03T05:04:25.000Z",
+        "EventLastSeen": "2024-02-03T05:04:25.000Z",
+        "ResourceRole": "TARGET",
+        "ServiceName": "guardduty",
+        "AdditionalInfo": {
+          "Value": "{\"sample\":true}",
+          "Type": "default"
+        }
+      },
+      "Severity": 8,
+      "Title": "A Kubernetes API commonly used in DefenseEvasion tactics invoked by the anonymous user.",
+      "Type": "DefenseEvasion:Kubernetes/SuccessfulAnonymousAccess",
+      "UpdatedAt": "2024-02-03T05:04:25.269Z"
+    }
+  ]
