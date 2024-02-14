@@ -6,7 +6,7 @@
 # Purpose:                      This script configures logging with a custom logger named "my_logger", sets up basic logging settings to write log messages to a file named "bruteforce.log", and logs informational, warning, and debug messages to the configured log file.
 # Resources:                    Classmates Christen R., ChatGPT
 #                               https://chat.openai.com/share/9a32f1fb-287a-438d-9ff2-34b5341a2fe0
-# Purpose: In Python, Logging capabilities to your Python tool with log rotation based on size.
+
 
 import logging
 from logging.handlers import RotatingFileHandler
