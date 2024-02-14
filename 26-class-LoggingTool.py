@@ -4,7 +4,7 @@
 # Author:                       E Campos
 # Date of latest revision:      FEB2024
 # Purpose:                      This script configures logging with a custom logger named "my_logger", sets up basic logging settings to write log messages to a file named "bruteforce.log", and logs informational, warning, and debug messages to the configured log file.
-
+# Resources:                    Classmates Christen R., ChatGPT
 # Configure logging
 
 import logging
