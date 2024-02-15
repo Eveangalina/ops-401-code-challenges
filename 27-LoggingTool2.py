@@ -9,34 +9,48 @@
 
 
 import logging
-from logging.handlers import RotatingFileHandler
+from logging.handlers import TimedRotatingFileHandler
+import os
+import time
 
-# Configure logging with rotation
-log_formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
-logFile = 'my_tool.log'
+# Configure logging
+def configure_logging():
+    logger = logging.getLogger('myTimedLogger')
+    logger.setLevel(logging.DEBUG)
+    handler = TimedRotatingFileHandler('timed_collections_tool.log', when="D", interval=1, backupCount=7)
+    formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+    handler.setFormatter(formatter)
+    logger.addHandler(handler)
+    return logger
 
-# Create a handler that writes log messages to a file, with a maximum
-# log size of 1MB, and a backup count of 3.
-handler = RotatingFileHandler(logFile, mode='a', maxBytes=1*1024*1024, 
-                              backupCount=3, encoding=None, delay=0)
-handler.setFormatter(log_formatter)
-handler.setLevel(logging.DEBUG)
+# Log and print messages
+def log_and_print(logger, message, level):
+    if level == 'warning':
+        logger.warning(message)
+    elif level == 'info':
+        logger.info(message)
+    # Add more levels as needed
+    print(message)
 
-logger = logging.getLogger('root')
-logger.setLevel(logging.DEBUG)
-logger.addHandler(handler)
+# Execute a command and log output
+def execute_command(logger, command):
+    logger.info(f"Executing command: {command}")
+    os.system(command)
+
+# List operations
+def list_operations(logger):
+    # Define your list here and perform operations
+    my_list = ["Pvt", "PFC", "LCpl", "Cpl", "Sgt", "SSgt", "GySgt", "MGySgt", "1stSgt", "SgtMaj"]
+    # Perform your operations and log as needed using log_and_print
 
 def main():
-    logger.info('Starting my_tool')
-    try:
-        # Your tool's main functionality here
-        result = 10 / 0  # Intentionally induce a ZeroDivisionError
-    except ZeroDivisionError as e:
-        logger.error('Encountered a division by zero error: %s', e)
-    except Exception as e:
-        logger.exception('An unexpected error occurred: %s', e)
-    finally:
-        logger.info('Exiting my_tool')
+    logger = configure_logging()
+    
+    # Example usage:
+    log_and_print(logger, "Aye Aye Sir", 'warning')
+    execute_command(logger, "ls -al")
+    list_operations(logger)
+    # Add more function calls as needed
 
 if __name__ == "__main__":
     main()
