@@ -47,7 +47,7 @@ def main():
     logger = configure_logging()
     
     # Example usage:
-    log_and_print(logger, "Aye Aye Sir", 'warning')
+    log_and_print(logger, "Aye Aye Ma'am", 'warning')
     execute_command(logger, "ls -al")
     list_operations(logger)
     # Add more function calls as needed
