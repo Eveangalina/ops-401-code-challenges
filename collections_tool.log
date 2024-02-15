@@ -1,0 +1,13 @@
+2024-02-14 18:05:31,799 - INFO - Printed the fourth element of the list
+2024-02-14 18:05:31,800 - INFO - Printed the sixth through tenth elements of the list
+2024-02-14 18:05:31,800 - INFO - Updated the list by changing the value of the seventh element
+2024-02-14 18:05:31,800 - INFO - Appended "Marine" to the list
+2024-02-14 18:05:31,800 - INFO - Cleared the list
+2024-02-14 18:05:31,800 - INFO - Created a copy of the original list
+2024-02-14 18:05:31,800 - INFO - Counted occurrences of "Pfc" in the list
+2024-02-14 18:05:31,800 - WARNING - 'SSgt' is not in the list
+2024-02-14 18:05:31,800 - INFO - Inserted "GySgt" at index 1 in the list
+2024-02-14 18:05:31,800 - INFO - Removed an element at index 3 from the list
+2024-02-14 18:05:31,800 - WARNING - 'SSgt' is not in the list
+2024-02-14 18:05:31,800 - INFO - Reversed the order of elements in the list
+2024-02-14 18:05:31,800 - INFO - Sorted the list
