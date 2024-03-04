@@ -7,18 +7,24 @@
 
 import requests
 
-# The URL you will make the request to
-url = "http://dvwa.local/login.php"
+# The URL from where we need to capture cookies
+url = "http://example.com"  # Replace with the actual URL
 
-# Make the initial request to capture the cookies
-response = requests.get(url)
-cookies = response.cookies
+# Create a session object to persist cookies across requests
+session = requests.Session()
 
-# Display the cookies received
-print("Cookies received:", cookies)
+# Make an initial GET request to capture cookies
+initial_response = session.get(url)
 
-# Make a subsequent request, sending the cookies back to the server
-response_with_cookies = requests.get(url, cookies=cookies)
+# Display the captured cookies
+print("Captured cookies from the initial response:")
+for cookie in session.cookies:
+    print(f"Cookie: {cookie.name}, Value: {cookie.value}")
+
+# Now, send the captured cookies back to the server in a new request
+# The session object automatically handles this
+response_with_cookies = session.get(url)
 
 # Display the server's response
-print("Server response:", response_with_cookies.text)
+print("Server response after sending cookies:")
+print(response_with_cookies.text)
